@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+	    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons">
+        {# <link rel="stylesheet" href="{{ asset('css/bootstrap-material-design.min.css', 'theme') }}" /> #}
+        <link rel="stylesheet" href="{{ asset('css/bootstrap-material-design.min.css', 'theme') }}">
+        <link rel="stylesheet" href="{{ asset('css/theme.css', 'theme') }}" />
+
+        <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('img/favicons/apple-touch-icon.png', 'theme') }}">
+        <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('img/favicons/favicon-32x32.png', 'theme') }}">
+        <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('img/favicons/favicon-16x16.png', 'theme') }}">
+        <link rel="manifest" href="{{ asset('img/favicons/manifest.json', 'theme') }}">
+        <link rel="mask-icon" href="{{ asset('img/favicons/safari-pinned-tab.svg', 'theme') }}" color="#b91d47">
+        <link rel="shortcut icon" href="{{ asset('img/favicons/favicon.ico', 'theme') }}">
+        <meta name="apple-mobile-web-app-title" content="Troop 307">
+        <meta name="application-name" content="Troop 307">
+        <meta name="msapplication-config" content="{{ asset('img/favicons/browserconfig.xml', 'theme') }}">
+        <meta name="theme-color" content="#ffffff">
+
+        <title>
+            {% block title %}
+                {% if record.title %}{{ record.title }} - {% endif %}{{ app.config.get('general/sitename') }}
+            {% endblock %}
+        </title>
+    </head>
+    <body>
+        {% include 'partials/_header.twig' %}
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-{{ theme.layout.main.width }} {{ not theme.layout.aside is defined ? 'col-centered'}}">
+                    {% block main %}
+                    {% endblock %}
+                </div>
+
+                {% if theme.layout.aside is defined %}
+                    <div class="col-md-{{ theme.layout.aside.width }}">
+                        {% include 'partials/_aside.twig' %}
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+
+        {% include 'partials/_footer.twig' %}
+
+        <script src="{{ asset('js/jquery-3.2.1.min.js', 'theme') }}"></script>
+        <script src="{{ asset('js/popper.js', 'theme') }}"></script>
+        <script src="{{ asset('js/bootstrap-material-design.min.js', 'theme') }}"></script>
+    </body>
+</html>

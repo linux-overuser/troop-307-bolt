@@ -1,0 +1,15 @@
+<nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light scrolling-navbar">
+    <div class="container">
+      <a class="navbar-brand" href="{{ path('homepage') }}">
+        <img id="logo" src="{{ asset('img/logo.svg', 'theme') }}" height="30" class="d-inline-block align-top" alt="Logo">
+        <strong>{{ app.config.get('general/sitename') }}</strong>
+    </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse justify-content-end" id="navbar">
+        {{ menu(template='partials/_sub_menu.twig') }}
+      </div>
+    </div>
+</nav>

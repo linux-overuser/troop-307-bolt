@@ -1,0 +1,52 @@
+/*Centers a lone column within a row*/
+.col-centered{
+    float: none;
+    margin: 0 auto;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+    padding-top: 5rem;
+}
+
+#logo {
+    margin-right: 5px;
+}
+
+.nav-item {
+    margin-left: 5px;
+}
+
+.nav-item.active {
+    background-color: #ef9a9a!important;
+    border-radius: 2px;
+}
+
+footer {
+    width: 100%;
+    height: calc(100vw / 8.525);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    position: absolute;
+    bottom: 0;
+    background-image: url("../img/footer-new.png");
+}
+
+@media (max-width: 768px) {
+    footer {
+        background-size: cover;
+        height: 125px;
+    }
+}
+
+#news-feed .card {
+    margin-bottom: 15px;
+}
+
+.card-text p:last-of-type {
+    margin-bottom: 0!important;
+}
