@@ -22,7 +22,7 @@
 
         <title>
             {% block title %}
-                {% if record.title %}{{ record.title }} - {% endif %}{{ app.config.get('general/sitename') }}
+                {% if record.title %}{{ record.title }} - {% endif %}{{ config.get('general/sitename') }}
             {% endblock %}
         </title>
     </head>
@@ -31,13 +31,13 @@
 
         <div class="container">
             <div class="row">
-                <div class="col-md-{{ theme.layout.main.width }} {{ not theme.layout.aside is defined ? 'col-centered'}}">
+                <div class="col-md-{{ config.get('theme/layout/main/width') }} {{ not config.get('theme/layout/aside') is defined ? 'col-centered'}}">
                     {% block main %}
                     {% endblock %}
                 </div>
 
-                {% if theme.layout.aside is defined %}
-                    <div class="col-md-{{ theme.layout.aside.width }}">
+                {% if config.get('theme/layout/aside') is defined %}
+                    <div class="col-md-{{ config.get('theme/layout/aside/width') }}">
                         {% include 'partials/_aside.twig' %}
                     </div>
                 {% endif %}
