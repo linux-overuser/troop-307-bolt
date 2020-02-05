@@ -5,7 +5,7 @@
         <h1>{{ __('general.phrase.overview-for') }} {{ taxonomy.options[slug]|default(slug) }}</h1>
 
         {% if not taxonomy.has_sortorder %}
-            {% set records = records|order(config.get('general/listing_sort')) %}
+            {% set records = records|order(app.config.get('general/listing_sort')) %}
         {% endif %}
     {% endif %}
 
