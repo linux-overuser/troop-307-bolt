@@ -1,10 +1,10 @@
 <ul class="navbar-nav">
     {% for item in menu %}
-        <li class="nav-item {{ item.submenu is defined ? 'dropdown' }}">
-            <a class="nav-link {{ item.submenu is defined ? 'dropdown-toggle' }}" {{ item.link is defined ? ('href="'~item.link~'"')|raw }} {{ item.submenu is defined ? 
+        <li class="nav-item {{ item.submenu is not null ? 'dropdown' }}">
+            <a class="nav-link {{ item.submenu is not null ? 'dropdown-toggle' }}" {{ item.link is defined ? ('href="'~item.link~'"')|raw }} {{ item.submenu is defined ? 
 'data-toggle="dropdown"' }}>{{ item.label }}</a>
 
-            {% if item.submenu is defined %}
+            {% if item.submenu is not null %}
                 <div class="dropdown-menu">
                     {% for subitem in item.submenu %}
                         <a class="dropdown-item" href="{{ subitem.link }}">{{ subitem.label }}</a>

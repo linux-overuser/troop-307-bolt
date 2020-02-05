@@ -1,0 +1,4 @@
+{% if image %}
+    <img class="img-fluid" src="{{ image.path }}" alt="{{ image.get('alt') }}">
+    <small>{{ image.get('alt') }}</small>
+{% endif %}

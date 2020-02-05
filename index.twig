@@ -7,7 +7,7 @@
         {{ record.teaser }}
 
         {% if record.image is defined %}
-            <img src="{{ image(record.image) }}" class="img-fluid" />
+            <img src="{{ record.image.path }}" class="img-fluid" />
         {% endif %}
 
         {{ record.body }}
